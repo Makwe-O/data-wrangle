@@ -1,0 +1,61 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "resource1",
+      "path": "output/daily_prices.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "Dates",
+            "type": "string",
+            "format": "default",
+            "title": "Dates",
+            "description": "Column to show available date"
+          },
+          {
+            "name": "Prices ",
+            "type": "string",
+            "format": "default",
+            "title": "Prices",
+            "description": "Column to show available prices"
+          }
+        ]
+      }
+    },
+    {
+      "name": "resource2",
+      "path": "output/monthly_prices.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "MONTH",
+            "type": "string",
+            "format": "default",
+            "title": "Month",
+            "description": "Column showing available months"
+          },
+          {
+            "name": "PRICE ",
+            "type": "string",
+            "format": "default",
+            "title": "Prices",
+            "description": "Column showing available prices"
+          }
+        ]
+      }
+    }
+  ],
+  "keywords": ["gas", "price", "date"],
+  "name": "Data wrangle",
+  "title": "Gas Prices",
+  "description": "List of dates and gas prices",
+  "contributors": [
+    {
+      "title": "Mmakwe Onyeka",
+      "role": "author"
+    }
+  ]
+}
