@@ -8,13 +8,16 @@ prices_monthly = 'output/' + 'monthly_prices.csv'
 
 
 def create_connection():
-    #open connection
-    client = request(targetUrl)
-    page_content = client.read()
+    try:
+        #open connection
+        client = request(targetUrl)
+        page_content = client.read()
 
-    #close connection
-    client.close()
-    fetch_node(page_content)
+        #close connection
+        client.close()
+        fetch_node(page_content)
+    except:
+        print('An error occured')
     
 
 def fetch_node(content):
@@ -61,7 +64,7 @@ def clean_start_date(date):
 
 def print_daily_prices(data):   
     with open(prices_daily, 'w') as csv_handle:
-        csv_handle.write('Dates, Prices \n')
+        csv_handle.write('Dates,Prices\n')
         for day in data:
             csv_handle.write(','.join(day))
             csv_handle.write('\n')
@@ -70,7 +73,7 @@ def print_daily_prices(data):
 
 def print_monthly_prices(data):
     with open(prices_monthly, 'w') as csv_handle:
-        csv_handle.write('MONTH, PRICE \n')
+        csv_handle.write('Dates,Prices\n')
         prev_month = data[0]
 
         for month in data:
