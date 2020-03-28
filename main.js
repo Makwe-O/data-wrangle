@@ -34,7 +34,7 @@ let svg2 = d3
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("../output/daily_prices.csv").then(function(data) {
+d3.csv("./data-visualizer/output/daily_prices.csv").then(function(data) {
   //   console.log(...data);
 
   data.forEach(function(d) {
@@ -68,7 +68,7 @@ d3.csv("../output/daily_prices.csv").then(function(data) {
   svg.append("g").call(d3.axisLeft(y));
 });
 
-d3.csv("../output/monthly_prices.csv").then(function(data) {
+d3.csv("./data-visualizer/output/monthly_prices.csv").then(function(data) {
   // format the data
   data.forEach(function(d) {
     d.Dates = parseTime2(d.Dates);
